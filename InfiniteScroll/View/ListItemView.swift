@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListItemView: View {
     var item: ListItem
-    @ObservedObject var viewModel: ListViewModel
+    @EnvironmentObject var viewModel: ListViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -28,7 +28,7 @@ struct ListItemView: View {
                 
                 if item.isExpanded {
                     ForEach(subItems) { subItem in
-                        ListItemView(item: subItem, viewModel: viewModel)
+                        ListItemView(item: subItem)
                             .padding(.leading, 20)
                     }
                 }

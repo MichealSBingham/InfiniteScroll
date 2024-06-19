@@ -14,7 +14,8 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(viewModel.items) { item in
-                    ListItemView(item: item, viewModel: viewModel)
+                    ListItemView(item: item)
+                        .environmentObject(viewModel)
                         .onAppear {
                             if viewModel.items.last == item {
                                 // load more data if we reach the end
