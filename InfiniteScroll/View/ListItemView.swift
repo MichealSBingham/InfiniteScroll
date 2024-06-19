@@ -31,6 +31,9 @@ struct ListItemView: View {
                     .background(Color(.systemGray6))
                     .cornerRadius(10)
                     .shadow(radius: 5)
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel(Text("\(item.title), \(item.isExpanded ? "expanded" : "collapsed")"))
+                    .accessibilityAddTraits(.isButton)
                 }
                 
                 if item.isExpanded {
@@ -54,6 +57,9 @@ struct ListItemView: View {
                     .background(Color(.systemGray6))
                     .cornerRadius(10)
                     .shadow(radius: 5)
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel(Text("\(item.title), link"))
+                    .accessibilityAddTraits(.isLink)
                 }
             }
         }

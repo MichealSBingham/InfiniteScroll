@@ -23,7 +23,11 @@ struct ContentView: View {
                                 viewModel.refresh()
                             }
                         }
+                    
+                    
                 }
+                
+                
             }
             .navigationTitle("Links and Folders")
             .onAppear {

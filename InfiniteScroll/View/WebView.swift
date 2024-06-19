@@ -20,9 +20,11 @@ struct WebView: View {
                 Text("Error: \(errorMessage)")
                     .foregroundColor(.red)
                     .padding()
+                    .accessibilityLabel(Text("Error: \(errorMessage)"))
             } else {
                 UIWebView(url: url, errorMessage: $errorMessage)
                     .edgesIgnoringSafeArea(.all)
+                    .accessibilityLabel(Text("Web content"))
             }
         }
     }

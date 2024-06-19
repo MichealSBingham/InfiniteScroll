@@ -10,6 +10,7 @@ import Combine
 
 class ListViewModel: ObservableObject {
     @Published var items: [ListItem] = []
+  
     
     init() {
         load()
@@ -36,6 +37,10 @@ class ListViewModel: ObservableObject {
         ]
         items.append(contentsOf: moreItems)
     }
+    
+
+    
+    
     /**
          Toggles the expansion state of a given folder item.
          
