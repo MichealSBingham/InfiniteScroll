@@ -6,13 +6,31 @@
 //
 
 import SwiftUI
+import Foundation
+import WebKit
+
 
 struct WebView: View {
+    let url: URL
+    @State private var errorMessage: String?
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if let errorMessage = errorMessage {
+                Text("Error: \(errorMessage)")
+                    .foregroundColor(.red)
+                    .padding()
+            } else {
+                UIWebView(url: url, errorMessage: $errorMessage)
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
     }
 }
 
+
+/*
 #Preview {
     WebView()
 }
+*/

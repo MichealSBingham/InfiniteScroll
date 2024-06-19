@@ -8,11 +8,41 @@
 import SwiftUI
 
 struct ListItemView: View {
+    var item: ListItem
+    @ObservedObject var viewModel: ListViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            if case .folder(let subItems) = item.type {
+                Button(action: {
+                    withAnimation {
+                        viewModel.toggleExpansion(for: item)
+                    }
+                }) {
+                    HStack {
+                        Text(item.title)
+                        Spacer()
+                        Image(systemName: item.isExpanded ? "chevron.down" : "chevron.right")
+                    }
+                }
+                
+                if item.isExpanded {
+                    ForEach(subItems) { subItem in
+                        ListItemView(item: subItem, viewModel: viewModel)
+                            .padding(.leading, 20)
+                    }
+                }
+            } else if case .link(let url) = item.type {
+                NavigationLink(destination: WebView(url: URL(string: url)!)) {
+                    Text(item.title)
+                }
+            }
+        }
     }
 }
 
+/*
 #Preview {
     ListItemView()
 }
+*/

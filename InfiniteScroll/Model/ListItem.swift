@@ -6,13 +6,22 @@
 //
 
 import SwiftUI
+import Foundation
 
-struct ListItem: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+enum ListItemType: Equatable {
+    case link(url: String)
+    case folder(items: [ListItem])
+}
+
+struct ListItem: Identifiable, Equatable {
+    let id = UUID()
+    let title: String
+    let type: ListItemType
+    var isExpanded: Bool = false
+    
+    static func ==(lhs: ListItem, rhs: ListItem) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 
-#Preview {
-    ListItem()
-}
+

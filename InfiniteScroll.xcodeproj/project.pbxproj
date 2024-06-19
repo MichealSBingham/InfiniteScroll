@@ -14,6 +14,11 @@
 		2622E9A52C23672D00602C43 /* InfiniteScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622E9A42C23672D00602C43 /* InfiniteScrollTests.swift */; };
 		2622E9AF2C23672D00602C43 /* InfiniteScrollUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622E9AE2C23672D00602C43 /* InfiniteScrollUITests.swift */; };
 		2622E9B12C23672D00602C43 /* InfiniteScrollUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622E9B02C23672D00602C43 /* InfiniteScrollUITestsLaunchTests.swift */; };
+		2622E9BF2C23680C00602C43 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622E9BE2C23680C00602C43 /* ListItem.swift */; };
+		2622E9C22C23687B00602C43 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622E9C12C23687B00602C43 /* ListViewModel.swift */; };
+		26BAF1582C236B30001E1F20 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BAF1572C236B30001E1F20 /* ListItemView.swift */; };
+		26BAF15A2C236B67001E1F20 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BAF1592C236B67001E1F20 /* WebView.swift */; };
+		26BAF15C2C236E6D001E1F20 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BAF15B2C236E6D001E1F20 /* UIWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		2622E9AA2C23672D00602C43 /* InfiniteScrollUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfiniteScrollUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2622E9AE2C23672D00602C43 /* InfiniteScrollUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollUITests.swift; sourceTree = "<group>"; };
 		2622E9B02C23672D00602C43 /* InfiniteScrollUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2622E9BE2C23680C00602C43 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		2622E9C12C23687B00602C43 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		26BAF1572C236B30001E1F20 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
+		26BAF1592C236B67001E1F20 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		26BAF15B2C236E6D001E1F20 /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,9 @@
 		2622E9922C23672A00602C43 /* InfiniteScroll */ = {
 			isa = PBXGroup;
 			children = (
+				26BAF1562C236B14001E1F20 /* View */,
+				2622E9C02C23685700602C43 /* ViewModel */,
+				2622E9BD2C23675C00602C43 /* Model */,
 				2622E9932C23672A00602C43 /* InfiniteScrollApp.swift */,
 				2622E9952C23672A00602C43 /* ContentView.swift */,
 				2622E9972C23672D00602C43 /* Assets.xcassets */,
@@ -125,6 +138,32 @@
 				2622E9B02C23672D00602C43 /* InfiniteScrollUITestsLaunchTests.swift */,
 			);
 			path = InfiniteScrollUITests;
+			sourceTree = "<group>";
+		};
+		2622E9BD2C23675C00602C43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2622E9BE2C23680C00602C43 /* ListItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2622E9C02C23685700602C43 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2622E9C12C23687B00602C43 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		26BAF1562C236B14001E1F20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26BAF1572C236B30001E1F20 /* ListItemView.swift */,
+				26BAF1592C236B67001E1F20 /* WebView.swift */,
+				26BAF15B2C236E6D001E1F20 /* UIWebView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26BAF1582C236B30001E1F20 /* ListItemView.swift in Sources */,
+				2622E9BF2C23680C00602C43 /* ListItem.swift in Sources */,
 				2622E9962C23672A00602C43 /* ContentView.swift in Sources */,
+				26BAF15A2C236B67001E1F20 /* WebView.swift in Sources */,
+				2622E9C22C23687B00602C43 /* ListViewModel.swift in Sources */,
 				2622E9942C23672A00602C43 /* InfiniteScrollApp.swift in Sources */,
+				26BAF15C2C236E6D001E1F20 /* UIWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
