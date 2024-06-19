@@ -35,6 +35,8 @@ struct ListItemView: View {
                     .accessibilityLabel(Text("\(item.title), \(item.isExpanded ? "expanded" : "collapsed")"))
                     .accessibilityAddTraits(.isButton)
                 }
+                .buttonStyle(PlainButtonStyle())
+                .foregroundColor(.green)
                 
                 if item.isExpanded {
                     ForEach(subItems) { subItem in
@@ -68,13 +70,17 @@ struct ListItemView: View {
     }
 }
 
-
-
-/*
 #Preview {
-    ListItemView()
+    ListItemView(item: ListItem(title: "Expand Folder", type: .folder(items: [
+        ListItem(title: "Facebook", type: .link(url: "https://www.facebook.com")),
+        ListItem(title: "Twitter", type: .link(url: "https://www.twitter.com"))
+    ])))
+    .environmentObject(ListViewModel())
 }
-*/
+
+
+
+
 
 
 

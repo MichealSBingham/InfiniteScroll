@@ -31,8 +31,8 @@ struct WebView: View {
 }
 
 
-/*
+
 #Preview {
-    WebView()
+    WebView(url: URL(string: "https://google.com")!)
 }
-*/
+
