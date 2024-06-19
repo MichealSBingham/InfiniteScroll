@@ -8,6 +8,7 @@
 import SwiftUI
 import WebKit
 
+/// A UIViewRepresentable wrapper for WKWebView to be used in SwiftUI.
 struct UIWebView: UIViewRepresentable {
     let url: URL
     @Binding var errorMessage: String?
@@ -27,6 +28,9 @@ struct UIWebView: UIViewRepresentable {
         uiView.load(request)
     }
 
+    /**
+         Coordinator class to handle navigation delegate methods.
+         */
     class Coordinator: NSObject, WKNavigationDelegate {
         var parent: UIWebView
 

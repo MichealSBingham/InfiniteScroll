@@ -19,6 +19,8 @@
 		26BAF1582C236B30001E1F20 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BAF1572C236B30001E1F20 /* ListItemView.swift */; };
 		26BAF15A2C236B67001E1F20 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BAF1592C236B67001E1F20 /* WebView.swift */; };
 		26BAF15C2C236E6D001E1F20 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BAF15B2C236E6D001E1F20 /* UIWebView.swift */; };
+		26BAF15E2C236FF0001E1F20 /* ListItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BAF15D2C236FF0001E1F20 /* ListItemTests.swift */; };
+		26BAF1602C23702C001E1F20 /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BAF15F2C23702C001E1F20 /* ListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		26BAF1572C236B30001E1F20 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		26BAF1592C236B67001E1F20 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		26BAF15B2C236E6D001E1F20 /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
+		26BAF15D2C236FF0001E1F20 /* ListItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTests.swift; sourceTree = "<group>"; };
+		26BAF15F2C23702C001E1F20 /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		2622E9922C23672A00602C43 /* InfiniteScroll */ = {
 			isa = PBXGroup;
 			children = (
+				26BAF1612C237298001E1F20 /* Utility */,
 				26BAF1562C236B14001E1F20 /* View */,
 				2622E9C02C23685700602C43 /* ViewModel */,
 				2622E9BD2C23675C00602C43 /* Model */,
@@ -127,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				2622E9A42C23672D00602C43 /* InfiniteScrollTests.swift */,
+				26BAF15D2C236FF0001E1F20 /* ListItemTests.swift */,
+				26BAF15F2C23702C001E1F20 /* ListViewModelTests.swift */,
 			);
 			path = InfiniteScrollTests;
 			sourceTree = "<group>";
@@ -164,6 +171,13 @@
 				26BAF15B2C236E6D001E1F20 /* UIWebView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		26BAF1612C237298001E1F20 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +324,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26BAF15E2C236FF0001E1F20 /* ListItemTests.swift in Sources */,
 				2622E9A52C23672D00602C43 /* InfiniteScrollTests.swift in Sources */,
+				26BAF1602C23702C001E1F20 /* ListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

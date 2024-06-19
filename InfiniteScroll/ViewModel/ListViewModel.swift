@@ -27,7 +27,7 @@ class ListViewModel: ObservableObject {
             ]))
         ]
     }
-    
+    /// Adds more items to simulate a refresh
     func refresh() {
         
         let moreItems = [
@@ -36,7 +36,11 @@ class ListViewModel: ObservableObject {
         ]
         items.append(contentsOf: moreItems)
     }
-    
+    /**
+         Toggles the expansion state of a given folder item.
+         
+         - Parameter item: The `ListItem` to toggle.
+         */
     func toggleExpansion(for item: ListItem) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items[index].isExpanded.toggle()

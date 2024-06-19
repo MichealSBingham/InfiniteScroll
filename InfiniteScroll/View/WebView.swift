@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 import WebKit
 
-
+/// A view representing a web view for displaying web content.
 struct WebView: View {
     let url: URL
     @State private var errorMessage: String?

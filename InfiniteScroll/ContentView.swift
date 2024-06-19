@@ -15,6 +15,7 @@ struct ContentView: View {
             List {
                 ForEach(viewModel.items) { item in
                     ListItemView(item: item)
+                        .transition(.move(edge: .bottom))
                         .environmentObject(viewModel)
                         .onAppear {
                             if viewModel.items.last == item {

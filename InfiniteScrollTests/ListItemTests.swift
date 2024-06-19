@@ -6,30 +6,34 @@
 //
 
 import XCTest
+@testable import InfiniteScroll
 
-final class ListItemTests: XCTestCase {
+class ListItemTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testListItemEquality() {
+        let item1 = ListItem(title: "Google", type: .link(url: "https://www.google.com"))
+        let item2 = ListItem(title: "Google", type: .link(url: "https://www.google.com"))
+        
+        XCTAssertEqual(item1, item2)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testListItemInequality() {
+        let item1 = ListItem(title: "Google", type: .link(url: "https://www.google.com"))
+        let item2 = ListItem(title: "Apple", type: .link(url: "https://www.apple.com"))
+        
+        XCTAssertNotEqual(item1, item2)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testListItemFolder() {
+        let subItem1 = ListItem(title: "Facebook", type: .link(url: "https://www.facebook.com"))
+        let subItem2 = ListItem(title: "Twitter", type: .link(url: "https://www.twitter.com"))
+        
+        let folder = ListItem(title: "Expand Folder", type: .folder(items: [subItem1, subItem2]))
+        
+        if case .folder(let items) = folder.type {
+            XCTAssertEqual(items.count, 2)
+        } else {
+            XCTFail("Expected folder type")
         }
     }
-
 }
