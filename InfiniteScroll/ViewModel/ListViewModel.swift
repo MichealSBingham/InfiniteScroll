@@ -30,13 +30,38 @@ class ListViewModel: ObservableObject {
     }
     /// Adds more items to simulate a refresh
     func refresh() {
-        
-        let moreItems = [
-            ListItem(title: "LinkedIn", type: .link(url: "https://www.linkedin.com")),
-            ListItem(title: "Instagram", type: .link(url: "https://www.instagram.com"))
-        ]
+        let moreItems = generateRandomItems()
         items.append(contentsOf: moreItems)
     }
+    
+    /// Function to return some random data to use for the list 
+    private func generateRandomItems() -> [ListItem] {
+        var newItems: [ListItem] = []
+        
+        let titles = ["LinkedIn", "Instagram", "Reddit", "GitHub", "YouTube", "StackOverflow", "Microsoft", "Amazon"]
+        let urls = ["https://www.linkedin.com", "https://www.instagram.com", "https://www.reddit.com", "https://www.github.com", "https://www.youtube.com", "https://stackoverflow.com", "https://www.microsoft.com", "https://www.amazon.com"]
+        
+        for _ in 0..<4 {
+            if Bool.random() {
+                // Add a link item
+                let randomIndex = Int.random(in: 0..<titles.count)
+                let linkItem = ListItem(title: titles[randomIndex], type: .link(url: urls[randomIndex]))
+                newItems.append(linkItem)
+            } else {
+                // Add a folder item
+                let folderItems: [ListItem] = (0..<2).map { _ in
+                    let randomIndex = Int.random(in: 0..<titles.count)
+                    return ListItem(title: titles[randomIndex], type: .link(url: urls[randomIndex]))
+                }
+                let folderItem = ListItem(title: "Folder \(Int.random(in: 1...100))", type: .folder(items: folderItems))
+                newItems.append(folderItem)
+            }
+        }
+        
+        return newItems
+    }
+
+
     
 
     
